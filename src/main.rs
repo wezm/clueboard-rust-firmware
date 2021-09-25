@@ -13,6 +13,7 @@ use stm32f3xx_hal::usb::{Peripheral, UsbBus, UsbBusType};
 use stm32f3xx_hal::{pac, timer};
 use usb_device::bus::UsbBusAllocator;
 use usb_device::class::UsbClass as _;
+use usb_device::device::UsbVidPid;
 
 use keyberon::debounce::Debouncer;
 use keyberon::key_code::{KbHidReport, KeyCode};
@@ -20,6 +21,10 @@ use keyberon::layout::Layout;
 use keyberon::matrix::{Matrix, PressedKeys};
 
 use crate::layout::{BASE_LAYER, FUNCTION_LAYER};
+
+// Same values that Clueboard QMK firmware uses
+const VID: u16 = 0xC1ED;
+const PID: u16 = 0x2391;
 
 type UsbClass = keyberon::Class<'static, UsbBusType, ()>;
 type UsbDevice = usb_device::device::UsbDevice<'static, UsbBusType>;
@@ -106,9 +111,11 @@ const APP: () = {
         let usb_bus = USB_BUS.as_ref().unwrap();
 
         let usb_class = keyberon::new_class(usb_bus, leds);
-        let usb_dev = keyberon::new_device(usb_bus,
+        let usb_dev = keyberon::new_device(
+            usb_bus,
+            UsbVidPid(VID, PID),
             "Clueboard",
-            "66% HotSwap Keyboard"
+            "66% HotSwap Keyboard",
         );
 
         // Set up the matrix scan timer, polls at 1kHz (1000 times a second/every 1ms)
