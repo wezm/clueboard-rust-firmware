@@ -106,7 +106,10 @@ const APP: () = {
         let usb_bus = USB_BUS.as_ref().unwrap();
 
         let usb_class = keyberon::new_class(usb_bus, leds);
-        let usb_dev = keyberon::new_device(usb_bus);
+        let usb_dev = keyberon::new_device(usb_bus,
+            "Clueboard",
+            "Clueboard 66% HotSwap"
+        );
 
         // Set up the matrix scan timer, polls at 1kHz (1000 times a second/every 1ms)
         let mut timer = timer::Timer::new(c.device.TIM3, clocks, &mut rcc.apb1);

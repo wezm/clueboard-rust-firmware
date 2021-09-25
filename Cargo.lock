@@ -310,7 +310,7 @@ dependencies = [
 [[package]]
 name = "keyberon"
 version = "0.2.0"
-source = "git+https://github.com/wezm/keyberon#9f5d22240819fe5a355f0ac05f175012b3c0d765"
+source = "git+https://github.com/wezm/keyberon#e2979532e4430a4bc2a9b081b8f4c7da60a4d32a"
 dependencies = [
  "arraydeque",
  "either",
@@ -323,7 +323,7 @@ dependencies = [
 [[package]]
 name = "keyberon-macros"
 version = "0.1.0"
-source = "git+https://github.com/wezm/keyberon#9f5d22240819fe5a355f0ac05f175012b3c0d765"
+source = "git+https://github.com/wezm/keyberon#e2979532e4430a4bc2a9b081b8f4c7da60a4d32a"
 dependencies = [
  "proc-macro-error",
  "proc-macro2",
@@ -572,7 +572,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "081e808e6b2114ced6a83437081ed9816c92017eda7722a7c22f80984fb5476a"
 dependencies = [
  "bare-metal",
- "cortex-m 0.7.3",
+ "cortex-m 0.6.7",
  "cortex-m-rt 0.6.14",
  "vcell",
 ]
