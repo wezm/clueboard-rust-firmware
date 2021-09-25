@@ -36,6 +36,16 @@ flash it with [dfu-util]:
 
     dfu-util -d 0483:df11 -a 0 --dfuse-address 0x08000000:leave -D clueboard.bin
 
+Licence
+-------
+
+This project is dual licenced under either of:
+
+- Apache License, Version 2.0 ([LICENSE-APACHE](https://github.com/wezm/clueboard-rust-firmware/blob/master/LICENSE-APACHE))
+- MIT license ([LICENSE-MIT](https://github.com/wezm/clueboard-rust-firmware/blob/master/LICENSE-MIT))
+
+at your option.
+
 [Keyberon]: https://github.com/TeXitoi/keyberon
 [clueboard]: https://clueboard.co/clueboard-66-low-profile
 [dfu-util]: http://dfu-util.sourceforge.net/
