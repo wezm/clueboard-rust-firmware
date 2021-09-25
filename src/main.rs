@@ -108,7 +108,7 @@ const APP: () = {
         let usb_class = keyberon::new_class(usb_bus, leds);
         let usb_dev = keyberon::new_device(usb_bus,
             "Clueboard",
-            "Clueboard 66% HotSwap"
+            "66% HotSwap Keyboard"
         );
 
         // Set up the matrix scan timer, polls at 1kHz (1000 times a second/every 1ms)
