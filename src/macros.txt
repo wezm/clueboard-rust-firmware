@@ -1,0 +1,9 @@
+# Format CONST_NAME: key presses
+# Lines beginning with # are ignored
+FNAME: First
+LNAME: Last
+UNAME: username
+EMAIL: test@example.com
+PHONE: 0400123456
+ADDR: 123 Name St
+TOWN: Somewhere

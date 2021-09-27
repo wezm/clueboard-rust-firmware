@@ -20,7 +20,7 @@ use keyberon::key_code::{KbHidReport, KeyCode};
 use keyberon::layout::Layout;
 use keyberon::matrix::{Matrix, PressedKeys};
 
-use crate::layout::{BASE_LAYER, FUNCTION_LAYER};
+use crate::layout::{BASE_LAYER, FUNCTION_LAYER, MACRO_LAYER};
 
 // Same values that Clueboard QMK firmware uses
 const VID: u16 = 0xC1ED;
@@ -42,7 +42,7 @@ type UsbDevice = usb_device::device::UsbDevice<'static, UsbBusType>;
 //     }
 // }
 
-pub static LAYERS: keyberon::layout::Layers = &[BASE_LAYER, FUNCTION_LAYER];
+pub static LAYERS: keyberon::layout::Layers = &[BASE_LAYER, FUNCTION_LAYER, MACRO_LAYER];
 
 #[app(device = stm32f3xx_hal::pac, peripherals = true)]
 const APP: () = {

@@ -14,18 +14,18 @@ I've not yet implemented support for the LED controller or speakers.
 
 **Note:** These instructions have only been tested on a Linux host.
 
-Install the Rust compiler, ARM Cortex target, and [cargo-binutils]:
+### Install the Rust compiler, ARM Cortex target, and [cargo-binutils]:
 
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     rustup target add thumbv7em-none-eabihf
     rustup component add llvm-tools-preview
     cargo install cargo-binutils
 
-Install [dfu-util]:
+### Install [dfu-util]:
 
     sudo pacman -S dfu-util # or equivalent for your OS
 
-Compile the firmware:
+### Compile the firmware:
 
     cargo objcopy --release -- -O binary clueboard.bin
 
