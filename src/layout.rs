@@ -66,19 +66,19 @@ KC_ESC,  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,   KC_6,   KC_7,   KC_8,   KC_9,  
 KC_TAB,  KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,   KC_Y,   KC_U,   KC_I,   KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS,                 KC_PGDN,
 KC_LCTL, KC_A,   KC_S,   KC_D,   KC_F,   KC_G,   KC_H,   KC_J,   KC_K,   KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,
 KC_LSFT,         KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT,         KC_UP,
-MO_FL,   KC_LALT,KC_LGUI,                KC_SPC, KC_SPC,                          KC_RALT, KC_RGUI, MO_ML,   KC_APP , KC_LEFT,KC_DOWN,KC_RGHT);
+MO_FL,   KC_LALT,KC_LGUI,                KC_SPC, KC_SPC,                          KC_NO  , KC_RGUI, MO_ML,   KC_APP , KC_LEFT,KC_DOWN,KC_RGHT);
 
 #[rustfmt::skip]
 pub(crate) static FUNCTION_LAYER: ClueboardLayer = layer!(
 KC_GRV,  KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,  KC_F6,  KC_F7,  KC_F8,  KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_DEL,                 KC_VOLU,
-______,  ______, ______, ______, ______, ______, ______, ______, ______, KC_MPRV, KC_MPLY, KC_MNXT, ______,  KC_MUTE,                KC_VOLD,
+______,  ______, ______, ______, ______, ______, ______, ______, ______, KC_MPRV, KC_MPLY, KC_MNXT, KC_MUTE, KC_INS,                 KC_VOLD,
 ______,  ______, ______, ______, ______, ______, KC_LEFT,KC_DOWN,KC_UP  ,KC_RGHT, ______,  ______,           ______,
 ______,          ______, ______, ______, ______, ______, ______, ______, ______,  ______,  ______,           ______,         KC_PGUP,
 ______,  ______, ______,                 ______, ______,                          ______,  ______,  ______,  ______, KC_HOME,KC_PGDN,KC_END);
 
 #[rustfmt::skip]
 pub(crate) static MACRO_LAYER: ClueboardLayer = layer!(
-______,  ______, EMAIL,  ______, ______, ______, ______, ______, ______, ______,  ______,  ______,  ______,  ______,                 ______,
+______,  ______, EMAIL,  ______, ______, ______, ______, ______, ______, ______,  ______,  ______,  ______,  KC_PRN,                 ______,
 ______,  ______, FNAME,  ______, ______, ______, ______, UNAME,  ______, ______,  PHONE,   ______,  ______,  ______,                 ______,
 ______,  ADDR,   ______, ______, ______, ______, ______, ______, ______, ______,  ______,  ______,           ______,
 ______,          ______, ______, ______, ______, TOWN,   ______, LNAME,  ______,  ______,  ______,           ______,         ______,
@@ -87,6 +87,7 @@ ______,  ______, ______,                 ______, ______,                        
 // Map keyberon Actions to QMK key codes
 // https://docs.qmk.fm/#/keycodes_basic
 const ______: Action = Action::Trans;
+const KC_NO: Action = Action::NoOp;
 
 const KC_GRV: Action = Action::KeyCode(Grave);
 const KC_F1: Action = Action::KeyCode(F1);
@@ -101,6 +102,7 @@ const KC_F9: Action = Action::KeyCode(F9);
 const KC_F10: Action = Action::KeyCode(F10);
 const KC_F11: Action = Action::KeyCode(F11);
 const KC_F12: Action = Action::KeyCode(F12);
+const KC_INS: Action = Action::KeyCode(Insert);
 const KC_DEL: Action = Action::KeyCode(Delete);
 
 const KC_VOLU: Action = Action::KeyCode(VolUp);
@@ -124,6 +126,7 @@ const KC_0: Action = Action::KeyCode(Kb0);
 const KC_MINS: Action = Action::KeyCode(Minus);
 const KC_EQL: Action = Action::KeyCode(Equal);
 const KC_BSPC: Action = Action::KeyCode(BSpace);
+const KC_PRN: Action = Action::KeyCode(PScreen);
 
 const KC_HOME: Action = Action::KeyCode(Home);
 const KC_END: Action = Action::KeyCode(End);
@@ -176,7 +179,7 @@ const KC_UP: Action = Action::KeyCode(Up);
 const KC_LALT: Action = Action::KeyCode(LAlt);
 const KC_LGUI: Action = Action::KeyCode(LGui);
 const KC_SPC: Action = Action::KeyCode(Space);
-const KC_RALT: Action = Action::KeyCode(RAlt);
+// const KC_RALT: Action = Action::KeyCode(RAlt);
 const KC_RGUI: Action = Action::KeyCode(RGui);
 const KC_APP: Action = Action::KeyCode(Application);
 const KC_LEFT: Action = Action::KeyCode(Left);
